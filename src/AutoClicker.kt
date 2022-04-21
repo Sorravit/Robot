@@ -11,6 +11,12 @@ import java.text.SimpleDateFormat
 
 class AutoClicker {
     var robot = Robot()
+    private fun leftClick(mousePositionX: Int, mousePositionY: Int) {
+        println("Move mouse to $mousePositionX, $mousePositionY")
+        robot.mouseMove(mousePositionX, mousePositionY)
+        leftClick()
+    }
+
     private fun leftClick() {
         println("Left Click")
         robot.mousePress(InputEvent.BUTTON1_MASK)
@@ -77,7 +83,7 @@ class AutoClicker {
                     cal = Calendar.getInstance()
                     sdf = SimpleDateFormat("HH:mm:ss")
                     println("Initiate auto play " + sdf.format(cal.time))
-                    leftClick()
+                    leftClick(mousePositionX, mousePositionY)
                 } else {
                     println("Mouse movement detected will not auto click, for now")
                 }
