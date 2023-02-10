@@ -1,7 +1,8 @@
 import line.LineNotification
 
-fun main(args:Array<String>) {
+fun main(args: Array<String>) {
 //    AutoClicker().keepScreenAlive()
-    val line = LineNotification("put token here")
-    println(line.send("Hello from kotlin"))
+    val line = LineNotification("")
+    println(line.send("Message without picture").inputStream.bufferedReader().use { it.readText() })
+    println(line.send("Message with picture", picture = "BIG.jpg").inputStream.bufferedReader().use { it.readText() })
 }
