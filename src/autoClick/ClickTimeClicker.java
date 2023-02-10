@@ -1,5 +1,6 @@
-import java.awt.AWTException;
-import java.awt.Robot;
+package autoClick;
+
+import java.awt.*;
 import java.awt.event.InputEvent;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-import java.awt.MouseInfo;
-import java.awt.Point;
-import java.awt.PointerInfo;
+package autoClick;
+
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

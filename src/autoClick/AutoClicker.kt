@@ -1,13 +1,10 @@
+package autoClick
+
+import java.awt.MouseInfo
 import java.awt.Robot
 import java.awt.event.InputEvent
-import java.awt.MouseInfo
-import kotlin.Throws
-import java.awt.AWTException
-import java.awt.event.KeyEvent
-import java.lang.InterruptedException
-import kotlin.jvm.JvmStatic
-import java.util.Calendar
 import java.text.SimpleDateFormat
+import java.util.*
 
 class AutoClicker {
     var robot = Robot()
