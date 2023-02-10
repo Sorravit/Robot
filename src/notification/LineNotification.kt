@@ -45,8 +45,6 @@ class LineNotification(private val token: String) {
                 it.write(payload.toByteArray())
             }
         }
-        println(connection.responseCode)
-        println(connection.responseMessage)
         return connection
     }
 
