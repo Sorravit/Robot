@@ -1,4 +1,4 @@
-import Notification.LineNotification
+import notification.LineNotification
 import util.ScreenshotUtil
 import java.io.FileInputStream
 import java.util.*
