@@ -1,6 +1,7 @@
 import autoClick.AutoClicker
 import notification.LineNotification
 import util.ScreenshotUtil
+import util.TimeUtil
 import java.io.FileInputStream
 import java.util.*
 import java.util.concurrent.Executors
@@ -13,9 +14,11 @@ fun main(args: Array<String>) {
     properties.load(FileInputStream("config.properties"))
     val line = LineNotification(properties.getProperty("token"))
     val executorService = Executors.newSingleThreadScheduledExecutor()
+    val timeUtil = TimeUtil()
 
     executorService.scheduleAtFixedRate({
         screenshotUtil.takeScreenshot(screenShotName)
+        println("Create Screenshot at: " + timeUtil.getCurrentTime() )
         println(
             "Line message Sending Status: " + line.send(
                 "Current Screenshot",

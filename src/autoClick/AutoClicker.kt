@@ -1,5 +1,6 @@
 package autoClick
 
+import util.TimeUtil
 import java.awt.MouseInfo
 import java.awt.Robot
 import java.awt.event.InputEvent
@@ -7,6 +8,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class AutoClicker {
+    val timeUtil = TimeUtil()
     var robot = Robot()
     private fun leftClick(mousePositionX: Int, mousePositionY: Int) {
         println("Move mouse to $mousePositionX, $mousePositionY")
@@ -77,16 +79,12 @@ class AutoClicker {
                 println("Mouse position ($mousePositionX,$mousePositionY}")
                 println("Old Mouse position ($oldMousePositionX,$oldMousePositionY}")
                 if (mousePositionX == oldMousePositionX && mousePositionY == oldMousePositionY) {
-                    cal = Calendar.getInstance()
-                    sdf = SimpleDateFormat("HH:mm:ss")
-                    println("Initiate auto play " + sdf.format(cal.time))
+                    println("Initiate auto play " + timeUtil.getCurrentTime())
                     leftClick(mousePositionX, mousePositionY)
                 } else {
                     println("Mouse movement detected will not auto click, for now")
                 }
-                cal = Calendar.getInstance()
-                sdf = SimpleDateFormat("HH:mm:ss")
-                println("100 second Break Starting : " + sdf.format(cal.time))
+                println("100 second Break Starting : " +timeUtil.getCurrentTime())
                 Thread.sleep(100000)
                 oldMousePositionX = mousePositionX
                 oldMousePositionY = mousePositionY
